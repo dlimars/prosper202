@@ -86,15 +86,7 @@ case "202-account": ?>
 <div class="container">
 <div class="main_wrapper">
 	<div class="row">
-  		<div class="col-xs-3">
-  			<!-- this is the prosper202 top-left logo/banner placement -->
-			<script type="text/javascript" charset="utf-8">
-			var is_ssl = ("https:" == document.location.protocol);
-			var asset_url = is_ssl ? "https://ads.tracking202.com/prosper202-cs-topleft/" : "<?php echo TRACKING202_ADS_URL; ?>/prosper202-cs-topleft/";
-			document.write(unescape("%3Ciframe%20class%3D%22advertise-top-left%22%20src%3D%22"+asset_url+"%22%20scrolling%3D%22no%22%20frameborder%3D%220%22%3E%3C/iframe%3E"));
-			</script>
-		</div>
-  		<div class="col-xs-9">
+  		<div class="col-xs-12">
 	  		<nav class="navbar navbar-default" role="navigation">
 				<ul class="nav navbar-nav">
 					<li <?php if (($navigation[1] == '202-account') AND !$navigation[2]) { echo 'class="active";'; } ?>><a href="<?php echo get_absolute_url();?>202-account/" id="HomePage">Home</a></li>			      
@@ -176,25 +168,6 @@ case "202-account": ?>
 	
 	$member_status = "Not Pro";
 ?>
-
-<script id="IntercomSettingsScriptTag">
-  window.intercomSettings = {
-  	user_id: "<?php echo $user_data['install_hash']; ?>",
-    email: "<?php echo $user_data['user_email']; ?>",
-    user_hash: "<?php echo $user_data['user_hash'];?>",
-    created_at: <?php echo $user_data['time_stamp']; ?>,
-    "widget": {
-    	"activator": "#IntercomDefaultWidget"
-  	},
-    Active_Subscription: "<?php echo $member_status;?>",
-    API_key: "<?php echo $user_data['api_key'];?>",
-    ClickServer_Version: "<?php echo $version; ?>",
-    PHP_Version: "<?php echo phpversion(); ?>",
-    MYSQL_Version: "<?php echo mysqli_get_client_info(); ?>",
-    app_id: "hciib3ia"
-  };
-</script>
-<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://static.intercomcdn.com/intercom.v1.js';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}};})()</script>
 
 <?php if (!$user_data['modal_status']) { 
 	$data = getSurveyData($user_data['install_hash']);?>
